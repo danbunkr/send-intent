@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.app.Activity;
 
 import com.getcapacitor.BridgeActivity;
-import com.getcapacitor.PluginCall;
 
 public class SendIntentActivity extends BridgeActivity {
 
