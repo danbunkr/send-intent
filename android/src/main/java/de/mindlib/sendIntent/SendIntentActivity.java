@@ -31,14 +31,4 @@ public class SendIntentActivity extends BridgeActivity {
             activity.finish();
         }
     }
-
-    @PluginMethod
-    public void finish(PluginCall call) {
-        Activity activity = bridge.getActivity();
-        if (activity != null) {
-            activity.finish();
-        } else {
-            call.reject("Activity is null");
-        }
-    }
 }
