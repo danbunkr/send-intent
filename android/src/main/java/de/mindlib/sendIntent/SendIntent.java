@@ -57,8 +57,7 @@ public class SendIntent extends Plugin {
 
          Activity activity = bridge.getActivity();
          if (activity != null) {
-             // Create an intent to launch the main activity
-             Intent intent = new Intent(activity, MainActivity.class);
+             Intent intent = activity.getIntent();
              // Set the flags to clear the task and start the main activity at the top of the stack
              intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
              // Start the main activity
