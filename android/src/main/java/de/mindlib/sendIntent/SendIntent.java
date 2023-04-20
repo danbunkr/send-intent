@@ -51,9 +51,6 @@ public class SendIntent extends Plugin {
       @PluginMethod
          public void finish(PluginCall call) {
              Activity activity = Bridge.getActivity();
-             if (activity != null) {
-                 activity.finishAffinity();
-             }
          }
 
     private JSObject readItemAt(Intent intent, String type, int index) {

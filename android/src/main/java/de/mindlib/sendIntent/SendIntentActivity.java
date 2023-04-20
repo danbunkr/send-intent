@@ -21,4 +21,10 @@ public class SendIntentActivity extends BridgeActivity {
     public void onStop() {
         super.onStop();
     }
+
+     @Override
+        protected void onDestroy() {
+            super.onDestroy();
+
+        }
 }
