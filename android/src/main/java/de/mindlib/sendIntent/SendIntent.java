@@ -49,14 +49,19 @@ public class SendIntent extends Plugin {
     }
 
      @PluginMethod
-        public void finish(PluginCall call) {
-            Activity activity = bridge.getActivity();
-            if (activity != null) {
-                activity.finish();
-            } else {
-                call.reject("Activity is null");
-            }
-        }
+     public void finish(PluginCall call) {
+         if (bridge == null) {
+             call.reject("Bridge is null");
+             return;
+         }
+
+         Activity activity = bridge.getActivity();
+         if (activity != null) {
+             activity.finish();
+         } else {
+             call.reject("Activity is null");
+         }
+     }
 
     private JSObject readItemAt(Intent intent, String type, int index) {
         JSObject ret = new JSObject();

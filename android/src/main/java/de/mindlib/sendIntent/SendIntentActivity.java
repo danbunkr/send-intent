@@ -16,18 +16,22 @@ public class SendIntentActivity extends BridgeActivity {
     @Override
     public void onPause() {
         super.onPause();
-        Activity activity = bridge.getActivity();
-        if (activity != null) {
-            activity.finish();
+        if (bridge != null) {
+            Activity activity = bridge.getActivity();
+            if (activity != null) {
+                activity.finish();
+            }
         }
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Activity activity = bridge.getActivity();
-        if (activity != null) {
-            activity.finish();
+        if (bridge != null) {
+            Activity activity = bridge.getActivity();
+            if (activity != null) {
+                activity.finish();
+            }
         }
     }
 }
