@@ -48,24 +48,12 @@ public class SendIntent extends Plugin {
         }
     }
 
-     @PluginMethod
-     public void finish(PluginCall call) {
-         if (bridge == null) {
-             call.reject("Bridge is null");
-             return;
-         }
-
-         Activity activity = bridge.getActivity();
-         if (activity != null) {
-             Intent intent = activity.getIntent();
-             // Set the flags to clear the task and start the main activity at the top of the stack
-             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-             // Start the main activity
-             activity.startActivity(intent);
-             // Finish the current activity
-             activity.finish();
-         } else {
-             call.reject("Activity is null");
+      @PluginMethod
+         public void finish(PluginCall call) {
+             Activity activity = Bridge.getActivity();
+             if (activity != null) {
+                 activity.finishAffinity();
+             }
          }
      }
 
