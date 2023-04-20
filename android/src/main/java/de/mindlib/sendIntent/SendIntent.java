@@ -55,7 +55,6 @@ public class SendIntent extends Plugin {
                  activity.finishAffinity();
              }
          }
-     }
 
     private JSObject readItemAt(Intent intent, String type, int index) {
         JSObject ret = new JSObject();
